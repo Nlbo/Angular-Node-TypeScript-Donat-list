@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "prod": "cd ./client && ng build --prod && cd.. && npm run build && npm run start",
+    "prod": "cd ./client && npm i && ng build --prod && cd.. && npm i && npm run build && npm run start",
     "start": "node dist/main.js",
     "dev": "nodemon src/main.ts",
     "build": "tsc -p ."
