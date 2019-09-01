@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { FinishedPageRoutingModule } from './finished-page-routing.module';
 import {FinishedPageComponent} from "./finished-page.component";
+import {FormsModule} from "@angular/forms";
+import {NgxPaginationModule} from 'ngx-pagination'
 
 
 @NgModule({
@@ -11,6 +13,8 @@ import {FinishedPageComponent} from "./finished-page.component";
   ],
   imports: [
     CommonModule,
+    FormsModule,
+    NgxPaginationModule,
     FinishedPageRoutingModule
   ]
 })

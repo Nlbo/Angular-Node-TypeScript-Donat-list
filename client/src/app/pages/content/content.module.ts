@@ -5,8 +5,6 @@ import { ContentRoutingModule } from './content-routing.module';
 import { ContentComponent } from './content.component';
 import {NavbarComponent} from "../../components/navbar/navbar.component";
 import {HeaderComponent} from "../../components/header/header.component";
-import {OngoingCardComponent} from "../../components/ongoing-card/ongoing-card.component";
-import {FinishedCardComponent} from "../../components/finished-card/finished-card.component";
 
 
 @NgModule({
@@ -14,8 +12,6 @@ import {FinishedCardComponent} from "../../components/finished-card/finished-car
     ContentComponent,
     NavbarComponent,
     HeaderComponent,
-    OngoingCardComponent,
-    FinishedCardComponent,
   ],
   imports: [
     CommonModule,

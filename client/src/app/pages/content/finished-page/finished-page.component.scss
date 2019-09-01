@@ -1,0 +1,135 @@
+.wrapper{
+  background-color: #f0f1f6;
+  width: 100%;
+  height: auto;
+  padding-top: 80px;
+  position: absolute;
+}
+.ongoing{
+  background: #FFFFFF 0 0 no-repeat padding-box;
+  opacity: 1;
+  width: calc(100% - 325px);
+  float: right;
+  margin-top: 10px;
+  margin-bottom: 36px;
+  margin-right: 20px;
+  border-radius: 8px;
+}
+.container p{
+  color: #ACACAC;
+}
+.container{
+  width: calc(100% - 305px);
+  float: right;
+  padding-top: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+.search{
+  display: flex;
+  margin: 20px;
+}
+.search input{
+  border: 1px solid #BFBFBF;
+  color: #BFBFBF;
+  width: 240px;
+  height: 40px;
+  padding-left: 10px;
+}
+.cart h2{
+  font-size: 25px;
+}
+.carts{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+.cart{
+  //width: 449px;
+  width: 27%;
+  min-height: 349px;
+  background: #FFFFFF 0 0 no-repeat padding-box;
+  box-shadow: 0 3px 19px lightgrey;
+  padding: 22px;
+  margin-bottom: 77px;
+}
+.cart .location img{
+  width: 13px;
+  height: 18px;
+  margin-right: 10px;
+}
+.info, .address, .location, .date{
+  display: flex;
+  margin-bottom: 12px;
+}
+.info{
+  margin: 32px 0 24px 0;
+  font-size: 20px;
+}
+.cart .finishing{
+  //margin-left: 76px;
+}
+.cart .line{
+  width: 1%;
+  height: 4px;
+  margin: 46px 0 19px 0;
+  //background: #EFEFEF;
+  background: #F11B5D;
+}
+.cart .percent{
+  border-bottom: #EFEFEF;
+  margin-bottom: 15px;
+  color: black;
+}
+.cart .sponsors{
+  color: #B2B2B2;
+}
+.create button{
+  width: 270px;
+  height: 32px;
+  background: black;
+  color: white;
+  border: none;
+  margin-right: 39px;
+  cursor: pointer;
+}
+.date2{
+  justify-content: space-between!important;
+}
+@media (max-width:1350px) {
+  .cart{
+    width: 40%;
+  }
+}
+@media (max-width:991px) {
+  .cart{
+    width: 60%;
+  }
+  .container{
+    flex-direction: column;
+  }
+  .create button{
+    margin-right: 0;
+    margin-top: 12px;
+  }
+}
+@media (max-width:767px) {
+  .cart{
+    width: 76%;
+  }
+}
+@media (max-width:667px) {
+  .ongoing{
+    width: 84%;
+  }
+  .container{
+    width: 86%;
+  }
+}
+@media (max-width:550px) {
+   .date2{
+     flex-direction: column;
+   }
+}
+

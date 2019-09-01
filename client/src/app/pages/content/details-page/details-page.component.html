@@ -1,0 +1,43 @@
+<div class="wrapper">
+  <div class="container">
+    <div class="details-page" [ngStyle]="{'background-image': 'url('+ imgSrc +')'} ">
+      <div class="form">
+        <p class="form-title">Goal</p>
+        <p class="price-before">$ {{donated}} <span>of</span></p>
+        <p class="price-after">$ {{amount}} raised</p>
+        <form>
+          <input [(ngModel)]="donat" [ngModelOptions]="{standalone: true}" type="text" placeholder="Donation amount" name="" id="">
+          <select name="">
+            <option>USD</option>
+          </select>
+          <button class="create" (click)="donate()">DONATE NOW</button>
+        </form>
+        <div class="fText">
+          <p>Can help with anything else? </p>
+          <p><strong>More about it</strong></p>
+        </div>
+      </div>
+      <div class="banner-bottom">
+        <p>Yerevan, Armenia</p>
+        <h2>{{title}}</h2>
+        <div class="progress">
+          <div class="line" [ngStyle]="{
+               'width': check()}"></div>
+          <div class="progress-info">
+            <p>Work progress for {{getDate()}}</p>
+            <p>Collected $ {{donated}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="details-info">
+      <div class="wrap">
+        <p class="sub-title">Project Intitator</p>
+        <p class="info-text">{{initiator}}</p>
+        <p class="sub-title">Description</p>
+        <p class="info-text">{{description}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+

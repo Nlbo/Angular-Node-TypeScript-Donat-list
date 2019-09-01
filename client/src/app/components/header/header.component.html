@@ -1,4 +1,7 @@
 <header>
-  <a href=""><img src="assets/images/person.png" alt="">admin@gmail.com</a>
+  <a routerLink="/auth" (click)="logOut()">
+    <button>Log Out</button>
+  </a>
+  <a><img [src]="url + imgSrc" alt="">{{email}}</a>
 </header>
 

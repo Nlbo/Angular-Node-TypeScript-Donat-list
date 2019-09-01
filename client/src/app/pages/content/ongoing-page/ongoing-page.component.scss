@@ -71,7 +71,7 @@
   margin-left: 76px;
 }
 .cart .line{
-  width: 100%;
+  width: 1%;
   height: 4px;
   margin: 46px 0 19px 0;
   //background: #EFEFEF;
@@ -92,6 +92,8 @@
   color: white;
   border: none;
   margin-right: 39px;
+  cursor: pointer;
+
 }
 @media (max-width:1350px) {
   .cart{

@@ -7,6 +7,8 @@ const routes: Routes = [
   {path: '', component: ContentComponent, children: [
       {path: 'ongoing', loadChildren: './ongoing-page/ongoing-page.module#OngoingPageModule' },
       {path: 'finished', loadChildren: './finished-page/finished-page.module#FinishedPageModule' },
+      {path: 'details/:id', loadChildren: './details-page/details-page.module#DetailsPageModule' },
+      {path: 'create', loadChildren: './create-page/create-page.module#CreatePageModule' },
       {path: '', redirectTo: 'ongoing', pathMatch: 'full'}
     ]},
 ];

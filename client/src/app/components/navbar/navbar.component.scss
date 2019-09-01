@@ -4,7 +4,7 @@ nav {
   background: #000000 0 0 no-repeat padding-box;
   opacity: 1;
   position: fixed;
-  z-index: 2;
+  z-index: 20;
 }
 nav ul li:nth-child(1) a:hover{
   background-color: transparent!important;
@@ -43,9 +43,16 @@ nav ul li a{
 nav ul li a:hover{
   background-color: #383838;
 }
-
+.mobile-logo{
+  display: none;
+}
 @media (max-width:667px) {
   nav{
     left: -240px!important;
+  }
+  .mobile-logo{
+    display: block!important;
+    position: relative;
+    left: 250px;
   }
 }

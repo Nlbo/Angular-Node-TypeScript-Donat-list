@@ -2,45 +2,53 @@
   <div class="container">
     <div>
       <h1>Ongoing Projects</h1>
-      <p>129 projects</p>
+      <p>{{projects.length}} projects</p>
     </div>
     <div class="create">
-      <button>CREATE NEW PROJECT</button>
+      <button [routerLink]="['/', 'content', 'create']">CREATE NEW PROJECT</button>
     </div>
   </div>
     <div class="ongoing">
        <div class="search">
-         <input type="text" placeholder="Search">
+         <input type="text" placeholder="Search" [(ngModel)]="search" (ngModelChange)="filter(search)">
        </div>
        <div class="carts">
-         <div class="cart" *ngFor="let i of [1,2,3,4,5,6]">
+         <div class="cart" *ngFor="let project of projects | paginate: { itemsPerPage: 6, currentPage: p }" [routerLink]="['/content', 'details', project._id]">
              <div class="location">
                <img src="assets/images/marker.svg" alt="">
-               <p>Dilijan, Armenia</p>
+               <p>{{project.location}}</p>
              </div>
              <div class="address">
-               <h2>Construction of the Dilijan North Highway</h2>
+               <h2>{{project.title}}</h2>
              </div>
              <div class="info">
-               <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem..</p>
+               <p>{{project.description| slice: 0:80}}...</p>
              </div>
              <div class="date">
                <div class="published">
                  <p style="color: #9B9B9B;margin-bottom: 4px">Published</p>
-                 <p>01/10/2019</p>
+                 <p>{{project.started_at}}</p>
                </div>
                <div class="finishing">
                  <p style="color: #9B9B9B;margin-bottom: 4px">Finishing</p>
-                 <p>01/10/2019</p>
+                 <p>{{project.finished_at}}</p>
                </div>
              </div>
              <div class="sponsors">
-               <p class="line"></p>
-               <p class="percent">62% raised of $250000 target</p>
-               <p class="sponsors">259 sponsors</p>
+               <p class="line" [ngStyle]="{
+               'width':(+project.donated / +project.amount) * 100 === 0 ? '1%' :
+                (+project.donated / +project.amount) * 100 < 100 ? (+project.donated / +project.amount) * 100 + '%'  :
+                100 + '%'
+                }"></p>
+               <p class="percent">{{
+                 (+project.donated / +project.amount) * 100 < 100 ?
+                   ((+project.donated / +project.amount) * 100 | number: '1.0-0') :
+                   100}}% raised of ${{project.amount}} target</p>
+               <p class="sponsors">{{project.sponsorsCount}} sponsors</p>
              </div>
          </div>
        </div>
+      <pagination-controls style="display: flex;justify-content: center" (pageChange)="p = $event"></pagination-controls>
     </div>
 
 </div>

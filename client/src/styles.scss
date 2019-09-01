@@ -1,10 +1,14 @@
 * {
   padding: 0;
   margin: 0;
-  font: Book 24px/30px Circular;
+  font-family: Book;
 }
 
+@import "assets/fonts/book/style.css";
 @font-face {
   font-family: Book;
-  src: url(assets/fonts/book/GentiumBookBasic-Bold.ttf)
+  src: url(assets/fonts/book/AdobeClean-light.ttf)
+}
+.ngx-pagination .current {
+  background: #000000!important;
 }

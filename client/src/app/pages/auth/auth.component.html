@@ -1,0 +1,71 @@
+<div class="wrapper">
+  <div class="login-page">
+    <div class="form">
+      <form [formGroup]="registerForm" (ngSubmit)="register()" *ngIf="!flag" class="register-form">
+        <div class="file-box">
+          <input id="file-upload" type="file" (change)="handleFileInput($event)">
+        </div>
+        <span class="error" *ngIf="registerForm.get('firstName').touched && registerForm.get('firstName').invalid"
+              style="float: left">Please write FirstName</span>
+        <input [ngClass]="{
+        'borderDanger': registerForm.get('firstName').touched && registerForm.get('firstName').invalid,
+        'borderSuccess': registerForm.get('firstName').touched && !registerForm.get('firstName').invalid
+        }" type="text" placeholder="FirstName *" formControlName="firstName">
+
+        <span class="error" *ngIf="registerForm.get('lastName').touched && registerForm.get('lastName').invalid"
+              style="float: left">Please write LastName</span>
+        <input [ngClass]="{
+        'borderDanger': registerForm.get('lastName').touched && registerForm.get('lastName').invalid,
+        'borderSuccess': registerForm.get('lastName').touched && !registerForm.get('lastName').invalid
+        }" type="text" placeholder="LastName *" formControlName="lastName">
+        <span class="error" *ngIf="registerForm.get('email').touched && registerForm.get('email').invalid"
+              style="float: left">Invalid Email</span>
+        <input [ngClass]="{
+        'borderDanger': registerForm.get('email').touched && registerForm.get('email').invalid,
+        'borderSuccess': registerForm.get('email').touched && !registerForm.get('email').invalid
+        }" type="text" placeholder="Email *" formControlName="email">
+        <span class="error" *ngIf="registerForm.get('phone').touched && registerForm.get('phone').invalid"
+              style="float: left">Invalid Phone</span>
+        <input [ngClass]="{
+        'borderDanger': registerForm.get('phone').touched && registerForm.get('phone').invalid,
+        'borderSuccess': registerForm.get('phone').touched && !registerForm.get('phone').invalid
+        }" type="text" placeholder="Phone *" formControlName="phone">
+        <span class="error" *ngIf="registerForm.get('password').touched && registerForm.get('password').invalid"
+              style="float: left">Invalid Password</span>
+        <input [ngClass]="{
+        'borderDanger': registerForm.get('password').touched && registerForm.get('password').invalid,
+        'borderSuccess': registerForm.get('password').touched && !registerForm.get('password').invalid
+        }" type="password" placeholder="Password *" formControlName="password">
+        <span class="error" *ngIf="registerForm.get('passwordCheck').touched && registerForm.get('passwordCheck').invalid"
+              style="float: left">Passwords not match</span>
+        <input [ngClass]="{
+        'borderDanger': registerForm.get('passwordCheck').touched &&
+         registerForm.get('passwordCheck').value !== registerForm.get('password').value,
+        'borderSuccess': registerForm.get('passwordCheck').touched &&
+        registerForm.get('passwordCheck').value === registerForm.get('password').value
+        }" type="password" placeholder="Password Check *" formControlName="passwordCheck">
+        <button
+          [disabled]="registerForm.invalid && registerForm.get('password').value === registerForm.get('passwordCheck').value"
+          type="submit">create
+        </button>
+        <p class="message">Already registered? <a (click)="changeFlag()">Sign In</a></p>
+      </form>
+      <form [formGroup]="loginForm" (ngSubmit)="login()" *ngIf="flag" class="login-form">
+         <span class="error" *ngIf="loginForm.get('email').touched && loginForm.get('email').invalid"
+               style="float: left">Invalid Email</span>
+        <input [ngClass]="{
+        'borderDanger': loginForm.get('email').touched && loginForm.get('email').invalid,
+        'borderSuccess': loginForm.get('email').touched && !loginForm.get('email').invalid
+        }" type="text" placeholder="Email *" formControlName="email">
+        <span class="error" *ngIf="loginForm.get('password').touched && loginForm.get('password').invalid"
+              style="float: left">Invalid Password</span>
+        <input [ngClass]="{
+        'borderDanger': loginForm.get('password').touched && loginForm.get('password').invalid,
+        'borderSuccess': loginForm.get('password').touched && !loginForm.get('password').invalid
+        }" type="password" placeholder="Password *" formControlName="password">
+        <button [disabled]="loginForm.invalid" type="submit">login</button>
+        <p class="message">Not registered? <a (click)="changeFlag()">Create an account</a></p>
+      </form>
+    </div>
+  </div>
+</div>
